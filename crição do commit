@@ -1,0 +1,23 @@
+[33mcommit e8223806435c881643c08c60d685f62c3ddcba1c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Juliano Barcellos <Juliano28052306@gmail.com>
+Date:   Wed Jun 26 09:41:37 2024 -0300
+
+    novas mudanças
+
+[33mcommit 959b04d92edd6727f297a87ba4d84de8e3b5185a[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Juliano Barcellos <Juliano28052306@gmail.com>
+Date:   Mon Jun 17 14:54:02 2024 -0300
+
+    Mudanças
+
+[33mcommit 25d8ff974f64aaefec0db3b10926c7a71ca65490[m
+Author: Juliano Barcellos <Juliano28052306@gmail.com>
+Date:   Mon Jun 17 14:48:31 2024 -0300
+
+    Adicionar arquivos de projeto.
+
+[33mcommit 138e0b1abb45e7d5e3c5954cb9731ca790e8cc21[m
+Author: Juliano Barcellos <Juliano28052306@gmail.com>
+Date:   Mon Jun 17 14:48:28 2024 -0300
+
+    Adicionar .gitignore e .gitattributes.

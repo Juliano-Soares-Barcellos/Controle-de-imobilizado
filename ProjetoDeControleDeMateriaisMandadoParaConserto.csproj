@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F85DE329-EEC1-4B11-827C-30DA0482EB32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjetoDeControleDeMateriaisMandadoParaConserto</RootNamespace>
+    <AssemblyName>ProjetoDeControleDeMateriaisMandadoParaConserto</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="computadoresMapeadosEconsertado, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\bin\Debug\computadoresMapeadosEconsertado.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="ImobilizadosDll">
+      <HintPath>dll\ImobilizadosDll\bin\Debug\ImobilizadosDll.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BancoConexao\Banco.cs" />
+    <Compile Include="Dao\AindaNaoConsertoDao.cs" />
+    <Compile Include="Dao\ArquivoTxtDao.cs" />
+    <Compile Include="Dao\ComputadorDao.cs" />
+    <Compile Include="Dao\DeleteDao.cs" />
+    <Compile Include="Dao\GravadorCsv.cs" />
+    <Compile Include="Dao\InseriComputadorParaConserto.cs" />
+    <Compile Include="Dao\ListarConsertoTelaCadastramento.cs" />
+    <Compile Include="Dao\MapeamentoPcsDao.cs" />
+    <Compile Include="Dao\NumeroDao.cs" />
+    <Compile Include="Dao\ProcurarCodigo.cs" />
+    <Compile Include="Dao\RetiraDoConserto.cs" />
+    <Compile Include="Dao\SelectFiltro.cs" />
+    <Compile Include="Dao\SelectTabela.cs" />
+    <Compile Include="Dao\TabelaDao.cs" />
+    <Compile Include="Dao\InsersaoDbPlanilha.cs" />
+    <Compile Include="Forms\AindaNaoConserto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AindaNaoConserto.Designer.cs">
+      <DependentUpon>AindaNaoConserto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ArrastarArquivoCsv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ArrastarArquivoCsv.Designer.cs">
+      <DependentUpon>ArrastarArquivoCsv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadastroComputador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadastroComputador.Designer.cs">
+      <DependentUpon>CadastroComputador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EspelhoPa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EspelhoPa.Designer.cs">
+      <DependentUpon>EspelhoPa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FiltroMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiltroMes.Designer.cs">
+      <DependentUpon>FiltroMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\mapeamento_pcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\mapeamento_pcs.Designer.cs">
+      <DependentUpon>mapeamento_pcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProcurarCodigoT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProcurarCodigoT.Designer.cs">
+      <DependentUpon>ProcurarCodigoT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TelaCadastramentoFones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TelaCadastramentoFones.Designer.cs">
+      <DependentUpon>TelaCadastramentoFones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Imobilizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Imobilizados.Designer.cs">
+      <DependentUpon>Imobilizados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TelaDeCadastramento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TelaDeCadastramento.Designer.cs">
+      <DependentUpon>TelaDeCadastramento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TrocaPcPa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrocaPcPa.Designer.cs">
+      <DependentUpon>TrocaPcPa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Installer1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Installer1.Designer.cs">
+      <DependentUpon>Installer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Computador.cs" />
+    <Compile Include="Model\ComputadorSaida.cs" />
+    <Compile Include="Model\Conserto.cs" />
+    <Compile Include="Model\Produto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Querys\Query.cs" />
+    <EmbeddedResource Include="Forms\AindaNaoConserto.resx">
+      <DependentUpon>AindaNaoConserto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ArrastarArquivoCsv.resx">
+      <DependentUpon>ArrastarArquivoCsv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadastroComputador.resx">
+      <DependentUpon>CadastroComputador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EspelhoPa.resx">
+      <DependentUpon>EspelhoPa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiltroMes.resx">
+      <DependentUpon>FiltroMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\mapeamento_pcs.resx">
+      <DependentUpon>mapeamento_pcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProcurarCodigoT.resx">
+      <DependentUpon>ProcurarCodigoT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TelaCadastramentoFones.resx">
+      <DependentUpon>TelaCadastramentoFones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Imobilizados.resx">
+      <DependentUpon>Imobilizados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TelaDeCadastramento.resx">
+      <DependentUpon>TelaDeCadastramento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TrocaPcPa.resx">
+      <DependentUpon>TrocaPcPa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EPPlus.Core">
+      <Version>1.5.4</Version>
+    </PackageReference>
+    <PackageReference Include="MaterialSkin">
+      <Version>0.2.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\nova.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\m - Cópia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\m - Cópia %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\Capturar-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\csv_imagem-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\degrade verde.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\degrade verde].PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\BrancoVermelho.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\BrancoVermelho1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\BrancoVermelho656.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\m -Busca computador.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagem\CadastroComputador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled%402x.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
